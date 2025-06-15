@@ -1,0 +1,261 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_42e6d102ae434607952ed0d17ac32894
+  created: 1749864594172
+  modified: 1749864594172
+  description: ""
+collection:
+  - name: Pacientes
+    meta:
+      id: fld_0fa9ca18d5dc46dbb7e711486ff6b4c5
+      created: 1749912558284
+      modified: 1749912566634
+      sortKey: -1749912558284
+      description: ""
+    children:
+      - url: http://127.0.0.1:8000/api/pacientes
+        name: obtener pacientes
+        meta:
+          id: req_ec3162e349c543e8ae3d33f8172c73e7
+          created: 1749912569115
+          modified: 1749919182782
+          isPrivate: false
+          description: ""
+          sortKey: -1749912569115
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQ5OTE0ODg2LCJleHAiOjE3NDk5MTg0ODYsIm5iZiI6MTc0OTkxNDg4NiwianRpIjoiVTVhcFA3ZG1TM1FyYVowOSIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.S3uye07g5UywvrvOCnWs3zBu_dS_n7ko8gRqVHfvFns
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/pacientes
+        name: crear paciente
+        meta:
+          id: req_9c5fdcf4fe954779a94902a834c9ad5e
+          created: 1749912611898
+          modified: 1749927662582
+          isPrivate: false
+          description: ""
+          sortKey: -1749912563749.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "tipo_documento_id": 1,
+              "numero_documento": "123456722289",
+              "nombre1": "Juan",
+              "nombre2": "Carlos",
+              "apellido1": "Pérez",
+              "apellido2": "Gómez",
+              "genero_id": 2,
+              "departamento_id": 5,
+              "municipio_id": 10,
+              "correo": "juan.perezsdsda@example.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQ5OTI3NjI0LCJleHAiOjE3NDk5MzEyMjQsIm5iZiI6MTc0OTkyNzYyNCwianRpIjoiVDhETzVUNXVTanVqNlRZSiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.uSpJfNAsEIMSAcbWNkHgKBxMM7ZtDSeD2M44OR67BFM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/pacientes/6
+        name: actualizar paciente
+        meta:
+          id: req_7ee078a72ab140bc8652521527d54354
+          created: 1749912656143
+          modified: 1749912751235
+          isPrivate: false
+          description: ""
+          sortKey: -1749912561066.75
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "tipo_documento_id": 1,
+              "numero_documento": "0000000",
+              "nombre1": "Juan",
+              "nombre2": "David",
+              "apellido1": "Pérez",
+              "apellido2": "Gómez",
+              "genero_id": 2,
+              "departamento_id": 5,
+              "municipio_id": 10,
+              "correo": "juan.perezosa@example.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/pacientes/6
+        name: Eliminar paciente
+        meta:
+          id: req_9579b1f8251449809f12ef03a1aade01
+          created: 1749912835703
+          modified: 1749912846228
+          isPrivate: false
+          description: ""
+          sortKey: -1749912559725.375
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/pacientes/7
+        name: obtener paciente por id
+        meta:
+          id: req_96c29fc459144ed6864a8649a61ccc30
+          created: 1749912965840
+          modified: 1749918998701
+          isPrivate: false
+          description: ""
+          sortKey: -1749912566432.25
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQ5OTE4OTkyLCJleHAiOjE3NDk5MjI1OTIsIm5iZiI6MTc0OTkxODk5MiwianRpIjoiTnlocWF0MHpRSjFieUtraiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.quVKXy8d8u11ho_3-gocHMcnk2yeR1f-HzMwudaMm0o
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - url: http://localhost:8000/api/register
+    name: Register
+    meta:
+      id: req_9427726f7d174079b4b93a35811b93b3
+      created: 1749864594209
+      modified: 1749916988367
+      isPrivate: false
+      description: ""
+      sortKey: -1749912558384
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "Juan Pérez",
+          "email": "juanGomez11@example.com",
+          "password": "secreta123",
+          "password_confirmation": "secreta123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8000/api/login
+    name: Login
+    meta:
+      id: req_af5e901aa4824225ba3a89d3df65125f
+      created: 1749913538832
+      modified: 1749914532480
+      isPrivate: false
+      description: ""
+      sortKey: -1749913538832
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "juanGomez@example.com",
+          "password": "secreta123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5d337841f12f77070ad5c56da45d6a547a92ff56
+    created: 1749864594175
+    modified: 1749912028043
+  cookies:
+    - key: XSRF-TOKEN
+      value: eyJpdiI6IkFlVXgyU0xRbEtjcmYzVU5ndUdRUWc9PSIsInZhbHVlIjoiNUwwMzMvZllOdnRJRjA1R1FvWGN0YytoSFhENEVYMFZnbCsxRlBKMUZTQ2p4YjFNUXBncjlvcTkyMXdQU0U0ZnB5enBJeEhlYVdSY3F4Smg1Vk05Qi9iWVo0WUVrNk9EVmd6cGk4ZEt2UlIwRDIzWlZiQlFXaEJyNDdjQmYyWlciLCJtYWMiOiJhYmRjMDAyNjJlZGJhMjk0N2U1NDYzZDUyYTE0MDE3N2NjMTEzZjliZjRiZjQ2NGMxOTlhMWEzOGJlZmNjYmQyIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: 127.0.0.1
+      path: /
+      hostOnly: true
+      creation: 2025-06-14T01:40:37.810Z
+      lastAccessed: 2025-06-14T14:40:28.043Z
+      sameSite: lax
+      id: ccd14fc1-ba07-4714-a107-495085266a66
+    - key: laravel_session
+      value: eyJpdiI6Ik1ielZMdDZRZjIvQlJ6bzVRYi9xaHc9PSIsInZhbHVlIjoielphcWc5ekhUamI5VGc0eWlyU3ZiMHNud09FVHpMYWxoZnpYNWFNNzVlcVZLb09oSjFLOGQycWUyVUFOaDJ4bktaRTUwSkVacXh4K05LR3d4dXMrSjI5RE92SERxVEhIcDhmTzdJdjZJWVNOdzJoa0JsL21yRzFpaHNyemhHd24iLCJtYWMiOiJlZGM3ZDA2Y2JhYzVmOThiNzA3MjA2MTQxOGNlY2NiMzQ1ZTIwOGNhMGExODE2YzRjYjI5NzU3ZGE4ZTU5NzEyIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: 127.0.0.1
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-06-14T01:40:37.811Z
+      lastAccessed: 2025-06-14T14:40:28.043Z
+      sameSite: lax
+      id: 6b4bfec8-a1b1-463c-b38e-7594ccaabd07
+environments:
+  name: Base Environment
+  meta:
+    id: env_5d337841f12f77070ad5c56da45d6a547a92ff56
+    created: 1749864594174
+    modified: 1749864594174
+    isPrivate: false
