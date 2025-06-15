@@ -12,10 +12,9 @@ En la carpeta `gestion_pacientes` se encuentra el backend desarrollado en PHP ut
   ```bash
   php artisan migrate:fresh --seed
 
-Lenvantar Api:
+- Lenvantar Api:
   ```bash
   php artisan serve
-
 
 ## Frontend (Angular)
 
