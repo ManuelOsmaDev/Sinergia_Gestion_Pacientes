@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <span class="navbar-brand">Gestión de Pacientes</span>
+
+    <div class="ms-auto d-flex align-items-center gap-3">
+      <span class="text-white fw-semibold">Bienvenido, <strong>{{usuario}}</strong></span>
+
+      <button class="btn btn-outline-light" (click)="navigate()">
+        Crear paciente
+      </button>
+
+      <button class="btn btn-outline-light" (click)="logout()">
+        Salir
+      </button>
+    </div>
+  </div>
+</nav>

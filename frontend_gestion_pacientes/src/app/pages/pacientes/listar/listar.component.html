@@ -1,0 +1,64 @@
+<div class="card mb-3">
+  <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+    <span>Lista de pacientes</span>
+    <input type="text" class="form-control w-25" placeholder="Buscar..." [(ngModel)]="searchTerm" (input)="buscar()" />
+  </div>
+
+  <div class="card-body p-0">
+    <table class="table table-striped table-hover mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Documento</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr *ngIf="isLoading">
+    <td colspan="5" class="text-center py-4">
+      <div class="spinner-border text-primary" role="status"></div>
+      <div class="mt-2">Cargando pacientes...</div>
+    </td>
+  </tr>
+
+  <tr *ngFor="let paciente of pacientes.data?.data; let i = index" [hidden]="isLoading">
+    <td>{{ paciente.id }}</td>
+    <td>{{ paciente.nombre1 }} {{ paciente.apellido1 }}</td>
+    <td>{{ paciente.correo }}</td>
+    <td>{{ paciente.numero_documento }}</td>
+    <td>
+      <button class="btn btn-sm btn-outline-primary me-2" [routerLink]="['/pacientes/ver', paciente.id]">Ver</button>
+      <button class="btn btn-sm btn-outline-danger me-2" (click)="eliminarPaciente(paciente.id)">Eliminar</button>
+      <button class="btn btn-sm btn-outline-warning" [routerLink]="['/pacientes/editar', paciente.id]">Editar</button>
+    </td>
+  </tr>
+
+  <tr *ngIf="!isLoading && pacientes.data?.data?.length === 0">
+    <td colspan="5" class="text-center py-3">No hay pacientes registrados</td>
+  </tr>
+</tbody>
+
+    </table>
+  </div>
+
+  <div class="card-footer text-center">
+    <button
+      class="btn btn-sm btn-secondary me-2"
+      [disabled]="paginaActual === 1"
+      (click)="cambiarPagina(paginaActual - 1)">
+      Anterior
+    </button>
+
+    <span>Página {{ paginaActual }} de {{ pacientes.last_page || 1 }}</span>
+
+    <button
+      class="btn btn-sm btn-secondary ms-2"
+      [disabled]="paginaActual === pacientes.last_page"
+      (click)="cambiarPagina(paginaActual + 1)">
+      Siguiente
+    </button>
+  </div>
+</div>
+

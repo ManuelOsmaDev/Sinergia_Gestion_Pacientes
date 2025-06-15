@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-header bg-info text-white">
+    Detalle del paciente
+  </div>
+
+  <div class="card-body" *ngIf="paciente">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <strong>Nombre completo:</strong><br />
+        {{ paciente.nombre1 }} {{ paciente.nombre2 || '' }} {{ paciente.apellido1 }} {{ paciente.apellido2 || '' }}
+      </div>
+      <div class="col-md-6">
+        <strong>Correo electrónico:</strong><br />
+        {{ paciente.correo }}
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <strong>Tipo de documento:</strong><br />
+        {{ paciente.tipo_documento?.nombre }}
+      </div>
+      <div class="col-md-6">
+        <strong>Número de documento:</strong><br />
+        {{ paciente.numero_documento }}
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <strong>Género:</strong><br />
+        {{ paciente.genero?.nombre }}
+      </div>
+      <div class="col-md-6">
+        <strong>Departamento:</strong><br />
+        {{ paciente.departamento?.nombre }}
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <strong>Municipio:</strong><br />
+        {{ paciente.municipio?.nombre }}
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <button class="btn btn-secondary" (click)="navigate()">Volver</button>
+    </div>
+  </div>
+
+  <div *ngIf="!paciente" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="mt-3">Cargando paciente...</p>
+  </div>
+</div>
