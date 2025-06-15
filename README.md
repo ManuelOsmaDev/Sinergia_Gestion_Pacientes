@@ -1,4 +1,3 @@
-# Sinergia_Gestion_Pacientes
 
 # Proyecto Gestión de Pacientes
 
